@@ -8,12 +8,16 @@ public class Fish {
 	int x;
 	int y;
 	Color color;
+	boolean isLittle;
+	boolean facingLeft;
 	
 	// Every fish has a destination
 	int destX;
 	int destY;
 	
-	public Fish(Color color, int x, int y) {
+	public Fish(Color color,
+			int x, int y,
+			boolean isLittle) {
 		this.color = color;
 		this.x = x;
 		this.y = y;

@@ -35,8 +35,13 @@ public class Fish {
 	}
 	public void draw(Graphics2D g) {
 		this.swim();
-		
-		DrawFish.smallFacingLeft(g,
+		if (this.isLittle) {
+			DrawFish.smallFacingLeft(g,
 				this.color, this.x, this.y);
+		}
+		else {
+			DrawFish.facingLeft(g,
+					this.color, this.x, this.y);
 	}
+		}
 }

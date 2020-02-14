@@ -6,18 +6,15 @@ import java.awt.Graphics2D;
 import me.jjfoley.gfx.GFX;
 
 /**
- * Aquarium is a graphical "application" that uses some code I built and have
- * shared with you that takes care of opening a window and communicating with
- * the user in a simple way.
- * 
- * The method draw is called 50 times per second, so we make an animation by
- * drawing our fish in one place, and moving that place slightly. The next time
- * draw gets called, our fish looks like it moved!
- * 
+	//From Aquarium code given in lab: 
+	 * https://github.com/jjfiv/CSC212Aquarium/blob/master/src/main/java/edu/smith/cs/csc212/aquarium/Aquarium.java
  * @author jfoley
  *
  */
 public class Aquarium extends GFX {
+		
+		Submarine small = new Submarine(250, 250, Color.yellow);
+		Shark daddy = new Shark(250, 350, Color.gray);
 	/**
 	 * This is a static variable that tells us how wide the aquarium is.
 	 */
@@ -46,10 +43,14 @@ public class Aquarium extends GFX {
 	// The red fish x component:
 	int fish3X = 100;
 	
-	Fish nemo = new Fish(Color.MAGENTA,
-			250, 250, true);
+	/* Two fish (big and small) that swim towards destination
+	 * and stops at destination.
+	 * 
+	 */
 	Fish marlin = new Fish(Color.orange,
-			100, 100, false);
+			450, 400, false);
+	Fish nemo = new Fish(Color.MAGENTA,
+			480, 410, true);
 
 	@Override
 	public void draw(Graphics2D g) {
@@ -57,8 +58,11 @@ public class Aquarium extends GFX {
 		g.setColor(Color.blue);
 		g.fillRect(0, 0, getWidth(), getHeight());
 
-		nemo.draw(g);
+
+		small.draw(g); // Was going to be small bubble but could not get it to move; sub does not move either
 		marlin.draw(g);
+		nemo.draw(g);
+		daddy.draw(g);
 		
 		// Draw the fish!
 		DrawFish.facingLeft(g, Color.yellow, fish1X, 200);

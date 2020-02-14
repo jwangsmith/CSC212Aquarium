@@ -3,6 +3,8 @@ package edu.smith.cs.csc212.aquarium;
 import java.awt.Color;			// Make this by right clicking error on Color
 import java.awt.Graphics2D;
 
+// Started in lab with Professor JJFoley
+
 public class Fish {
 	// Every fish has an x position that is an int.
 	int x;
@@ -23,14 +25,15 @@ public class Fish {
 		this.y = y;
 		this.isLittle = isLittle;
 		
-		this.destX = 450;		// Set destination: Fish swim until hit 450
-		this.destY = 450;
+		this.destX = 125;		// Set destination: Fish swim until hit 450
+		this.destY = 125;
 	}
 	
 	public void swim() {
 		// "Fish Destination System"
-		if (this.y < this.destY) {
-		this.y -= 1;			// Fish swim to the bottom
+		if (this.y > this.destY || this.x > this.destX){
+		this.x -= 1;
+		this.y -= 1;
 		}
 	}
 	public void draw(Graphics2D g) {
